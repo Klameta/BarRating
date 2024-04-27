@@ -13,9 +13,8 @@ namespace Data.Models
         [Required(ErrorMessage = "From field is required.")]
         [StringLength(255, ErrorMessage = "Description must be less than 255 characters.")]
         public string Description { get; set; }
-        //[Required(ErrorMessage = "From field is required.")]
-        [MaxLength(2 * 1024 * 1024, ErrorMessage = "Data size exceeds the maximum allowed size of 2 MB.")]
-        public byte[] Photo { get; set; }
+        [Required(ErrorMessage = "From field is required.")]
+        public string Photo { get; set; }
 
         public virtual ICollection<Review> Reviews { get; set; }
 
