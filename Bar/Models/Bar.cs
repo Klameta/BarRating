@@ -7,11 +7,13 @@ namespace Data.Models
     {
         public int Id { get; set; }
         [Required(ErrorMessage = "From field is required.")]
-        [StringLength(50, MinimumLength = 2, ErrorMessage = "First name must be between 2 and 50 characters.")]
+        [StringLength(64, ErrorMessage = "Name must be less than 64 characters.")]
         public string Name { get; set; }
         [Required(ErrorMessage = "From field is required.")]
+        [StringLength(255, ErrorMessage = "Description must be less than 255 characters.")]
         public string Description { get; set; }
         [Required(ErrorMessage = "From field is required.")]
+        [MaxLength(2 * 1024 * 1024, ErrorMessage = "Data size exceeds the maximum allowed size of 2 MB.")]
         public byte[] Photo { get; set; }
 
         public virtual User User { get; set; }
