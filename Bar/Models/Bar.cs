@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Data.Models
@@ -16,6 +17,11 @@ namespace Data.Models
         [MaxLength(2 * 1024 * 1024, ErrorMessage = "Data size exceeds the maximum allowed size of 2 MB.")]
         public byte[] Photo { get; set; }
 
-        public virtual User User { get; set; }
+        public virtual ICollection<Review> Reviews { get; set; }
+
+        public Bar()
+        {
+            Reviews = new List<Review>();
+        }
     }
 }

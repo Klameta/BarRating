@@ -18,11 +18,11 @@ namespace Data.Models
 
         public string Role { get; set; }
 
-        public ICollection<Bar> Bars { get; set; }
+        public virtual ICollection<Review> Reviews { get; set; }
 
         public User()
         {
-            Bars = new List<Bar>();
+            Reviews = new List<Review>();
         }
     }
 }

@@ -13,6 +13,7 @@ namespace Data
     public class BarReviewDbContext : IdentityDbContext<User, IdentityRole, string>
     {
         public virtual DbSet<Bar> Bars { get; set; }
+        public virtual DbSet<Review> Reviews { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
