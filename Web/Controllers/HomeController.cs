@@ -21,7 +21,7 @@ namespace Web.Controllers
             _logger = logger;
             _context = context;
 
-            counts = new Counts(_context.Bars.Count(), _context.Reviews.Count());
+            counts = new Counts(_context.Bars.Count(), _context.Reviews.Count(), _context.Users.Count());
         }
 
         public IActionResult Index()
@@ -37,14 +37,16 @@ namespace Web.Controllers
     }
     public class Counts
     {
-        public Counts(int bar, int review)
+        public Counts(int bar, int review, int user)
         {
             Bar = bar;
             Review = review;
+            Users = user;
         }
 
         public int Bar { get; set; }
         public int Review { get; set; }
+        public int Users { get; set; }
 
     }
 }
