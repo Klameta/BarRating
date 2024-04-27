@@ -1,0 +1,15 @@
+﻿.home-links, form button{
+    font-weight: bold;
+    color: blue;
+    text-decoration: underline
+}
+
+.home-links:hover , form button :hover{
+    color: black;
+    text-decoration: none;
+}
+
+.nav-item{
+    color: blue;
+    border-right: solid 2px black
+}

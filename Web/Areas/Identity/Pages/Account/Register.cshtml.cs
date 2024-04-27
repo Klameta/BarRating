@@ -75,6 +75,7 @@ namespace Web.Areas.Identity.Pages.Account
             {
                 var user = new User { UserName = Input.Email, Email = Input.Email,FirstName = Input.FirstName, LastName = Input.LastName };
                 var result = await _userManager.CreateAsync(user, Input.Password);
+                
                 if (result.Succeeded)
                 {
 
@@ -84,6 +85,7 @@ namespace Web.Areas.Identity.Pages.Account
                     }
                     else
                     {
+                        await _userManager.AddToRoleAsync(user, "User");
                         await _signInManager.SignInAsync(user, isPersistent: false);
                         return LocalRedirect(returnUrl);
                     }
